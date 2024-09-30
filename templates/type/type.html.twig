@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TypeController!
+{% endblock %}
+
+{% block body %}
+	<body>
+		<img src="{{asset('images/logobikelife.png')}}" class="h-[150px] w-[200px] absolute ml-[20%]" alt="Logo bike life"/>
+		<header class="flex flex-col bg-contain bg-no-repeat md:bg-no-repeat bg-cover py-96 container mx-auto gap-[60px]" style="background-image:url('{{asset('images/typevelo.jpg')}}')">
+			<div class="text-white font-semibold gap-[3%] text-2xl pb flex justify-center">
+
+				<a id="hover" href="{{path('app_main')}}">Accueil</a>
+				<a id="hover" href="">Tous nos produits</a>
+				<a id="hover" href="">Connexion</a>
+				<a id="hover" href="">Contact</a>
+
+			</div>
+			<div class="border border-solid border-2 bg-gray-600 opacity-[70%] w-[60%] py-4 ml-[18%]">
+				<h1 class="text-white text-5xl text-center font-semibold ">Les differents types de vélo</h1>
+			</div>
+		</header>
+		<section>
+			<h2 class="text-3xl text-center pt-12 font-semibold">Les vélos de route et course</h2>
+		</section>
+		<section>
+			<h2 class="text-3xl text-center pt-12 font-semibold">Vélo de montagne et VTT</h2>
+		</section>
+		<section>
+			<h2 class="text-3xl text-center pt-12 font-semibold">Vélo de montagne et VTT</h2>
+		</section>
+		<section>
+			<h2 class="text-3xl text-center pt-12 font-semibold">Vélos électriques</h2>
+		</section>
+		<section>
+			<h2 class="text-3xl text-center pt-12 font-semibold">BMX</h2>
+		</section>
+
+	</body>
+{% endblock %}
