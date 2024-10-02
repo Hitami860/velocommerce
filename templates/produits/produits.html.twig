@@ -6,7 +6,7 @@
 {% block body %}
 	<body class="bg-gray-800">
 		<img src="{{asset('images/logobikelife.png')}}" class="h-[150px] w-[200px] absolute ml-[20%]" alt="Logo bike life"/>
-		<header class="flex flex-col bg-contain bg-no-repeat md:bg-no-repeat bg-cover py-96 container mx-auto gap-[60px]" style="background-image:url('{{asset('images/bgproduits.jpg')}}')">
+		<header class="flex flex-col bg-contain bg-no-repeat md:bg-no-repeat bg-cover py-96 container mx-auto gap-[60px] border-2" style="background-image:url('{{asset('images/bgproduits.jpg')}}')">
 			<div class="text-white font-semibold gap-[3%] text-2xl pb flex justify-center">
 
 				<a id="hover" href="{{path('app_main')}}">Accueil</a>
@@ -23,12 +23,12 @@
 			</div>
 		</header>
 		<section>
-			<h2 class="text-3xl text-center pt-12 font-semibold text-white">Tous les produits</h2>
+			<h2 class="text-3xl text-center pt-12 font-semibold text-white">Tous les produits ({{ produits | length }})</h2>
 		</section>
 		<div class="flex flex-wrap container mx-auto pt-6 gap-6 flex justify-center">
 			{% for produit in produits %}
 				<div class="w-1/4 bg-gray-800 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-					<a href="">
+					<a href="{{path('app_produit', {id: produit.id})}}">
 						<div class="zoom-image"><img class="w-full h-[200px]" src="{{asset(produit.image)}}" alt=""/></div>
 					</a>
 					<div class="p-5">

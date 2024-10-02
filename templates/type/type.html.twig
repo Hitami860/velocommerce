@@ -6,11 +6,11 @@
 {% block body %}
 	<body class="bg-gray-800">
 		<img src="{{asset('images/logobikelife.png')}}" class="h-[150px] w-[200px] absolute ml-[20%]" alt="Logo bike life"/>
-		<header class="flex flex-col bg-contain bg-no-repeat md:bg-no-repeat bg-cover py-96 container mx-auto gap-[60px]" style="background-image:url('{{asset('images/typevelo.jpg')}}')">
+		<header class="flex flex-col bg-contain bg-no-repeat md:bg-no-repeat bg-cover py-96 container mx-auto gap-[60px] border-2" style="background-image:url('{{asset('images/typevelo.jpg')}}')">
 			<div class="text-white font-semibold gap-[3%] text-2xl pb flex justify-center">
 
 				<a id="hover" href="{{path('app_main')}}">Accueil</a>
-				<a id="hover" href="">Tous nos produits</a>
+				<a id="hover" href="{{path('app_produits')}}">Tous nos produits</a>
 				<a id="hover" href="">Connexion</a>
 				<a id="hover" href="">Contact</a>
 
@@ -39,33 +39,32 @@
 				Si vous rêvez avant tout d’aventure et de découverte, le vélo de cyclotourisme est parfaitement adapté à vos besoins. Sa conception lui permet de transporter des sacoches tout en restant stable, notamment dans les descentes. Ce type de vélo comprend généralement un guidon cintré, un cadre robuste et des points d’attache pour votre matériel.<br>Gravel et cyclocross<br>Le cyclocross est une discipline compétitive spécifique avec des vélos spécialement adaptés. Ceux-ci présentent un empattement accru pour assurer l’équilibre, un style et une conception robustes, avec des palettes de vitesses conçues pour cette pratique. À vocation plus récréative, le vélo de gravel présente des pneus plus larges pour s’aventurer en dehors des routes. Leur cadre se rapproche de ceux des modèles d’endurance pour une expérience plus confortable que le vélo de course.
 			</h3>
 		</section>
-		<section class="mb-7">
+		<section class="mb-7 pt-[3%]">
 			<div class="pb-[20%] bg-no-repeat container mx-auto bg-cover" style="background-image:url('{{asset('images/vtt2pres.jpeg')}}')">
 				<h2 class="text-3xl text-center pt-12 font-semibold text-white">Vélo de montagne et VTT</h2>
 			</div>
 			<h3 class="text-white text-lg container mx-auto pt-8">Le vélo de montagne désigne lui aussi une famille plus large de vélos, dont le point commun est une conception pour rouler hors des sentiers battus. Ils se définissent par des pneus à crampons, un guidon droit et un système de suspension.<br><span class="font-semibold">Cross-country simple suspension</span><br>Le cross-country est une discipline orientée vers la vitesse et la compétition en montagne. Ce sont des vélos légers et maniables avec un débattement généralement compris entre 80 et 110 mm. La suspension simple permet d’atteindre un meilleur rendement énergétique ou de rouler sur des sentiers moins accidentés.<br><span class="font-semibold">Cross-country double suspension</span><br>Pour une meilleure absorption des chocs lors d’une pratique plus rigoureuse, tournez-vous vers un modèle cross-country à suspension double.<br><span class="font-semibold">Trail</span><br>Une géométrie plus agressive, un débattement plus grand (120 à 150 mm) et une stabilité accrue caractérisent les modèles de trail, des vélos conçus pour s’amuser hors des sentiers battus. Souvent dotés de deux suspensions, ils sont conçus pour absorber les chocs, particulièrement en descente.<br><span class="font-semibold">All Mountain</span><br>Encore plus de contrôle et de confort vous attendent avec un All Mountain, un type de vélo conçu pour les longues sorties en montagne et adapté à tous les terrains. Ils présentent généralement un débattement de 140-150 mm pour une absorption optimale.<br><span class="font-semibold">Enduro</span><br>Avec un long empattement et un débattement de 150-180 mm, les vélos d’enduro sont aussi axés sur les longues distances. Un peu moins réactifs et un peu plus lourds, ils offrent un grand confort et de la stabilité sur les sentiers techniques.<br><span class="font-semibold">Descente</span><br>Comme leur nom l’indique, ces vélos sont conçus spécifiquement pour les descentes rapides ! Ils présentent un débattement de plus de 180 mm ainsi qu’une géométrie aux angles agressifs.
 			</h3>
 		</section>
-		<section class="mb-7">
+		<section class="mb-7 pt-[3%]">
 			<div class="pb-[20%] bg-no-repeat container mx-auto bg-cover" style="background-image:url('{{asset('images/fatbikepres.jpg')}}')">
 				<h2 class="text-3xl text-center pt-12 font-semibold text-white">Fat bike</h2>
 			</div>
 			<h3 class="text-white text-lg container mx-auto pt-8">Facilement reconnaissable à ses gros pneus, encore plus larges que ceux des vélos de montagne, le fat bike est fait pour rouler dans la neige, offrant une bonne flottabilité. Ils seront aussi de parfaits alliés pour la boue printanière et peuvent être utilisés toute l’année si la vitesse vous importe peu.</h3>
 		</section>
-		<section class="mb-7">
+		<section class="mb-7 pt-[3%]">
 			<div class="pb-[20%] bg-no-repeat container mx-auto bg-cover" style="background-image:url('{{asset('images/veloelecpres.webp')}}')">
 				<h2 class="text-3xl text-center pt-12 font-semibold text-white">Vélos électriques</h2>
 			</div>
 			<h3 class="text-white text-lg container mx-auto pt-8">Les vélos électriques se caractérisent par l’ajout d’une batterie, offrant une assistance au pédalage. Aujourd’hui, la gamme se diversifie et on retrouve des batteries plus ou moins puissantes avec différentes autonomies selon vos besoins. Découvrez comment choisir un vélo électrique.<br><span class="font-semibold">Hybride électrique</span><br>Très polyvalentes pour les trajets quotidiens comme pour partir en aventure, par exemple en cyclotourisme, ces vélos assurent une autonomie généreuse pour vous aider à monter les pentes ou parcourir encore plus de kilomètres sans trop suer.<br><span class="font-semibold">Montagne électrique</span><br>On trouve désormais des vélos à assistance électrique pour toutes les pratiques en montagne ! Grâce à l’ajout d’un moteur, ces modèles facilitent les montées et vous permettent de profiter plus longtemps des pistes.</h3>
 		</section>
-		<section class="mb-7">
+		<section class="mb-7 pt-[3%]">
 			<div class="pb-[20%] bg-no-repeat container mx-auto bg-cover bg-center" style="background-image:url('{{asset('images/bmxpres.jpg')}}')">
 				<h2 class="text-3xl text-center pt-12 font-semibold text-white">BMX</h2>
 			</div>
 			<h3 class="text-white text-lg container mx-auto pt-8">Inspiré du motocross, le BMX est une discipline qui fait appel à un vélo au petit cadre et aux petites roues, mais avec un grand guidon pour une manipulation facile. La pratique se divise en deux disciplines :<br><span class="font-semibold">Race</span><br>
 				Dans cette discipline pratiquée sur des pistes artificielles, on fait appel à des vélos rigides avec une transmission à une vitesse avec un frein arrière à patins. Les pédales peuvent être plates ou automatiques et le cadre est souvent en aluminium, bien qu’on retrouve aujourd’hui des cadres en carbone.<br><span class="font-semibold">FreeStyle</span><br>
 				Pratiqué dans la rue ou en skate-park, ce style de BMX est équipé de pédales plates, d’un rotor pour les rotations du guidon et de pegs, des tubes métalliques.</h3>
-
 		</section>
 
 	</body>

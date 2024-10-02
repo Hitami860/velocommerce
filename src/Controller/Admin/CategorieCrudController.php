@@ -20,6 +20,7 @@ class CategorieCrudController extends AbstractCrudController
     {
         return [
             TextField::new('nom'),
+            TextField::new('image'),
         ];
     }
     

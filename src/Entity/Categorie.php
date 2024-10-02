@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\CategorieRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CategorieRepository::class)]
@@ -23,6 +24,9 @@ class Categorie
      */
     #[ORM\OneToMany(targetEntity: Produits::class, mappedBy: 'categorie', cascade: ["persist"], orphanRemoval: true)]
     private Collection $produits;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $image = null;
 
         public function __tostring() {
             return $this->nom;
@@ -75,6 +79,18 @@ class Categorie
                 $produit->setCategorie(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): static
+    {
+        $this->image = $image;
 
         return $this;
     }
