@@ -11,9 +11,12 @@
 
 				<a id="hover" href="{{path('app_main')}}">Accueil</a>
 				<a id="hover" href="{{path('app_produits')}}">Tous nos produits</a>
-				<a id="hover" href="">Connexion</a>
+				{% if app.user %}
+				<a id="hover" href="{{path('app_logout')}}">Deconnexion</a>
+				{% else %}
+				<a id="hover" href="{{path('app_login')}}">Connexion</a>
+				{% endif %}
 				<a id="hover" href="">Contact</a>
-
 			</div>
 			<div class="border border-solid border-2 bg-gray-600 opacity-[70%] w-[60%] py-4 ml-[18%]">
 				<h1 class="text-white text-5xl text-center font-semibold ">Les differents types de vélo</h1>

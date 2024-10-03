@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bike Life - Inscription{% endblock %}
+
+{% block body %}
+<body class="bg-gray-800 container mx-auto">
+ <div class="pt-[20%] mb-[23%]">
+    <h1 class="text-white text-2xl uppercase text-center">Inscription</h1>
+
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+    <div class="mb-5">
+        {{ form_widget(registrationForm.email) }}
+        </div>
+        <div class="mb-5">
+        {{ form_widget(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        </div>
+        <div class="mb-5 text-white">
+        {{ form_row(registrationForm.agreeTerms) }}
+    </div>
+        <button style="color:white;" type="submit" class="btn w-[30%] text-white bg-[#54b3d6] rounded-xl">S'inscrire</button>
+    {{ form_end(registrationForm) }}
+    <a href="{{path('app_main')}}"><p class="text-white pt-7 text-xl text-center">Retour sur la page d'accueil</p></a>
+    </div>
+    </body>
+{% endblock %}

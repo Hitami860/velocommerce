@@ -12,7 +12,14 @@
 
 				<a id="hover" href="{{path('app_main')}}">Accueil</a>
 				<a id="hover" href="{{path('app_produits')}}">Tous nos produits</a>
-				<a id="hover" href="">Connexion</a>
+				{% if app.user %}
+				{% if "ROLE_Admin" in app.user.roles %}
+				<a id="hover" href="{{path('admin')}}" >Admin</a>
+				{% endif %}
+				<a id="hover" href="{{path('app_logout')}}">Deconnexion</a>
+				{% else %}
+				<a id="hover" href="{{path('app_login')}}">Connexion</a>
+				{% endif %}
 				<a id="hover" href="">Contact</a>
 
 			</div>
@@ -27,7 +34,7 @@
 			<h2 class="text-3xl text-center pt-12 font-semibold text-white">Catégories</h2>
 			<div class="flex flex-wrap gap-3 justify-center pt-7">
 			{% for category in categorie %}
-			<div class="w-1/4 bg-gray-800 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+			<div class="w-1/4 bg-gray-800 border border-gray-200 hover:border-[#54b3d6] rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 					<a href="{{path('app_categorie', {id: category.id})}}">
 						<div class="zoom-image"><img class="w-full h-[200px]" src="{{asset(category.image)}}" alt=""/></div>
 					</a>
