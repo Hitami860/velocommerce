@@ -20,7 +20,7 @@
 				{% else %}
 				<a id="hover" href="{{path('app_login')}}">Connexion</a>
 				{% endif %}
-				<a id="hover" href="">Contact</a>
+				<a id="hover" href="{{path('app_contact')}}">Contact</a>
 
 			</div>
 			<div class="border border-solid border-2 bg-gray-600 opacity-[70%] w-[60%] py-4 ml-[18%]">
@@ -34,7 +34,7 @@
 			<h2 class="text-3xl text-center pt-12 font-semibold text-white">Catégories</h2>
 			<div class="flex flex-wrap gap-3 justify-center pt-7">
 			{% for category in categorie %}
-			<div class="w-1/4 bg-gray-800 border border-gray-200 hover:border-[#54b3d6] rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+			<div class="w-1/4 bg-gray-800 border border-2 border-gray-200 hover:border-[#54b3d6] rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 					<a href="{{path('app_categorie', {id: category.id})}}">
 						<div class="zoom-image"><img class="w-full h-[200px]" src="{{asset(category.image)}}" alt=""/></div>
 					</a>
