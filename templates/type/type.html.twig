@@ -12,6 +12,7 @@
 				<a id="hover" href="{{path('app_main')}}">Accueil</a>
 				<a id="hover" href="{{path('app_produits')}}">Tous nos produits</a>
 				{% if app.user %}
+				<a id="hover" href="{{path('app_profil')}}">Profil</a>
 				<a id="hover" href="{{path('app_logout')}}">Deconnexion</a>
 				{% else %}
 				<a id="hover" href="{{path('app_login')}}">Connexion</a>

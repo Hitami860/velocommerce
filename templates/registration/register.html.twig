@@ -11,12 +11,19 @@
 
     {{ form_start(registrationForm) }}
     <div class="mb-5">
+    
         {{ form_widget(registrationForm.email) }}
         </div>
         <div class="mb-5">
         {{ form_widget(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
+        </div>
+        <div class="mb-5">
+        {{ form_widget(registrationForm.telephone) }}
+        </div>
+        <div class="mb-5">
+        {{ form_widget(registrationForm.adresse) }}
         </div>
         <div class="mb-5 text-white">
         {{ form_row(registrationForm.agreeTerms) }}

@@ -16,6 +16,7 @@
 				{% if "ROLE_Admin" in app.user.roles %}
 				<a id="hover" href="{{path('admin')}}" >Admin</a>
 				{% endif %}
+				<a id="hover" href="{{path('app_profil')}}">Profil</a>
 				<a id="hover" href="{{path('app_logout')}}">Deconnexion</a>
 				{% else %}
 				<a id="hover" href="{{path('app_login')}}">Connexion</a>

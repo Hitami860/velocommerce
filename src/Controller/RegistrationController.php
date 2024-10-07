@@ -29,11 +29,15 @@ class RegistrationController extends AbstractController
                 )
             );
 
-            $user->setRowguid("123456");
-            // $user->setRoles([$form->get('roles')->getData()]);
+            $user->setTelephone($form->get('telephone')->getData());
+            $user->setAdresse($form->get('adresse')->getData());
+
+            $user->setRowguid("uniqid");
 
             $entityManager->persist($user);
             $entityManager->flush();
+
+            $this->addFlash("success", "Inscription réalisé avec succés ! Vous pouvez désormais vous connecter à votre compte.");
 
             // do anything else you need here, like send an email
 
