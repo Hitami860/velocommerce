@@ -34,6 +34,7 @@ class PanierController extends AbstractController
         return $this->render('panier/panier.html.twig',[
             'controller_name' => 'PanierController',
             'data'=>$data,
+            'total'=>$total,
         ]);
         
     }
@@ -60,5 +61,59 @@ class PanierController extends AbstractController
             'controller_name' => 'PanierController',
             'panier'=>$panier,
         ]);
-}
     }
+
+    #[Route('/remove/{id}', name: 'app_remove')]
+
+    public function remove(Produits $produit, RequestStack $requestStack): Response
+    {
+    
+        $session = $requestStack->getSession();
+        $id = $produit->getId();
+        $panier = $session->get('panier',[]);
+
+        if(!empty($panier[$id])){
+            if($panier[$id] > 1){
+                $panier[$id]--;
+            }else{
+                unset($panier[$id]);
+            }
+        }
+
+        $session->set("panier", $panier);
+
+        return $this->redirectToRoute('app_panier',[
+            'controller_name' => 'PanierController',
+            'panier'=>$panier,
+        ]);
+    }
+
+    #[Route('/delete/{id}', name: 'app_delete')]
+    public function delete(Produits $produit, RequestStack $requestStack): Response
+    {
+        $session = $requestStack->getSession();
+        $id = $produit->getId();
+        $panier = $session->get('panier',[]);
+
+        if(!empty($panier[$id])){
+            unset($panier[$id]);
+        }
+
+        $session->set("panier", $panier);
+
+        return $this->redirectToRoute('app_panier', [
+            'controller_name' => 'PanierController',
+            'panier'=>$panier,
+        ]);
+    }
+
+    #[Route('/supprimer', name: 'panier_supp')]
+    public function panierSupp(RequestStack $requestStack)
+    {
+        $session = $requestStack->getSession();
+        $session->remove("panier");
+
+        return $this->redirectToRoute("app_panier");
+    }
+
+}
