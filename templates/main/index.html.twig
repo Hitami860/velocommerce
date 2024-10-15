@@ -43,7 +43,7 @@
 						<a href="#">
 							<h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white uppercase">{{category.nom}}</h5>
 						</a>
-						<a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#54b3d6] rounded-lg hover:bg-[#0B9C9F] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+						<a href="{{path('app_categorie', {id: category.id})}}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#54b3d6] rounded-lg hover:bg-[#0B9C9F] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
 							Découvrir
 							<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 14 10">
 								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -56,29 +56,19 @@
 		</section>
 		<section>
 			<h2 class="text-3xl text-center pt-12 font-semibold text-white">Actus Bike</h2>
-			<div class="container mx-auto flex flex-wrap gap-4 pt-7 pl-[4%]">
-				<div class="flex flex-col">
-					<img class="h-[200px] border-2" src="{{asset('images/actu1.webp')}}" alt="actualite">
+			<div class="container mx-auto flex flex-wrap gap-4 pt-7 pl-[8%]">
+				<div class="flex flex-col pl-[18%] gap-4">
+				{% for actualites in actualite %}
+				<a href="{{path('app_actualite', {id: actualites.id})}}">
+					<img class="h-[300px] border-2 w-full " src="{{asset(actualites.image)}}" alt="actualite">
 					<p class="text-white">
-						<span class="font-bold">World Tour 2025</span>
-						: Dès 2025, les coureurs espoirs<br>évoluant en World Tour ou ProTeam ne pourront plus<br>disputer les championnats du monde dans la catégorie U23.
+					</a>
+						<span class="font-bold text-2xl">{{actualites.titre}}</span>
+						{# : Dès 2025, les coureurs espoirs<br>évoluant en World Tour ou ProTeam ne pourront plus<br>disputer les championnats du monde dans la catégorie U23. #}
 					</p>
+				{% endfor %}
 				</div>
-				<div class="flex flex-col">
-					<img class="h-[200px] border-2" src="{{asset('images/actu2.jpeg')}}" alt="actualite">
-					<p class="text-white">
-						<span class="font-bold">Transfert</span>
-						: Après une saison réussie sous les couleurs de<br>l’équipe St Michel – Mavic – Auber93, Alexandre Delettre va rejoindre<br>la TotalEnergies en 2025.
-					</p>
-				</div>
-				<div class="flex flex-col">
-					<img class="h-[190px] border-2" src="{{asset('images/actu3.jpeg')}}" alt="actualite">
-					<p class="text-white">
-						<span class="font-bold">Transfert</span>
-						: Après cinq saisons chez Caja Rural – Seguros RGA,<br>Orluis Aular va découvrir le World Tour en 2025<br>sous le maillot de la Movistar. 
-					</p>
-				</div>
-			</div>
+				
 		</section>
 		<section>
 		

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Actualite;
 use App\Entity\Categorie;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -11,20 +12,14 @@ use Symfony\Component\Routing\Attribute\Route;
 class MainController extends AbstractController
 {
     #[Route('/', name: 'app_main')]
-    public function index(): Response
+    public function index(EntityManagerInterface $entity): Response
     {
-        return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
-    }
-
-    #[Route('/', name: 'app_main')]
-    public function Categorie(EntityManagerInterface $entity): Response
-    {
+        $actualite = $entity->getRepository(  Actualite::class)->findAll();
         $categorie = $entity->getRepository(  Categorie::class)->findAll();
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
-            'categorie' => $categorie
+            'categorie' => $categorie,
+            'actualite' => $actualite,
         ]);
     }
 

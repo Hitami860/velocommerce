@@ -67,7 +67,7 @@
 				  {% else %}
                     <p class="text-center text-2xl text-white font-bold">Votre panier est vide !!!</p>
 				{% endfor %}
-				<a href="{{path("panier_supp")}}"><img class="pl-[50%]" src="{{asset('images/supprimertout.png')}}" alt="logo supprimer"></a>
+				<a href="{{path("panier_supp")}}"><img class="{{ data ? "":"hidden" }} pl-[50%]" src="{{asset('images/supprimertout.png')}}" alt="logo supprimer"></a>
 				<div class="flex flex-col md:flex-row items-center md:items-center justify-between lg:px-6 pb-6 border-b border-gray-200 max-lg:max-w-lg max-lg:mx-auto">
 					<h5 class="text-white font-manrope font-semibold text-2xl leading-9 w-full max-md:text-center max-md:mb-4">Total</h5>
 				
@@ -78,11 +78,9 @@
 				</div>
 				<div class="max-lg:max-w-lg max-lg:mx-auto">
 					/
-					{# {% if (session['panier']) is not empty %} #}
-					<button class="rounded-full py-4 px-6 bg-[#54b3d6] text-white font-semibold text-lg w-full text-center transition-all duration-500 hover:bg-indigo-700 ">Paiement</button>
-					{# {% else %} #}
-					{# <button class="  invisible rounded-full py-4 px-6 bg-[#54b3d6] text-white font-semibold text-lg w-full text-center transition-all duration-500 hover:bg-indigo-700 ">Paiement</button> #}
-					{# {% endif %} #}
+					
+					<button class="{{ data ? "":"hidden" }} rounded-full py-4 px-6 bg-[#54b3d6] text-white font-semibold text-lg w-full text-center transition-all duration-500 hover:bg-indigo-700 ">Paiement</button>
+					
 				</div>
 			</div>
 		</div>
