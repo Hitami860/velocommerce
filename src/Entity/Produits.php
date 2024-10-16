@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProduitsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -29,6 +31,17 @@ class Produits
     #[ORM\ManyToOne(inversedBy: 'produits')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Categorie $categorie = null;
+
+    /**
+     * @var Collection<int, CommandesDetails>
+     */
+    #[ORM\ManyToMany(targetEntity: CommandesDetails::class, mappedBy: 'produits')]
+    private Collection $commandesDetails;
+
+    public function __construct()
+    {
+        $this->commandesDetails = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -91,6 +104,33 @@ class Produits
     public function setCategorie(?Categorie $categorie): static
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, CommandesDetails>
+     */
+    public function getCommandesDetails(): Collection
+    {
+        return $this->commandesDetails;
+    }
+
+    public function addCommandesDetail(CommandesDetails $commandesDetail): static
+    {
+        if (!$this->commandesDetails->contains($commandesDetail)) {
+            $this->commandesDetails->add($commandesDetail);
+            $commandesDetail->addProduit($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommandesDetail(CommandesDetails $commandesDetail): static
+    {
+        if ($this->commandesDetails->removeElement($commandesDetail)) {
+            $commandesDetail->removeProduit($this);
+        }
 
         return $this;
     }
