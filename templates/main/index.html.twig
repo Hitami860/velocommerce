@@ -74,10 +74,15 @@
 		
 		<h2 class="text-3xl text-center pt-12 font-semibold text-white">Les clichés Bike du mois</h2>
 		<div class="container mx-auto flex gap-4 pt-7">
-		<img class="h-[250px]" src="{{asset('images/photo1.jpg')}}" alt="">
-		<img class="h-[250px]" src="{{asset('images/photo2.jpg')}}" alt="">
-		<img class="h-[250px]" src="{{asset('images/photo4.jpg')}}" alt="">
-		<img class="h-[250px]" src="{{asset('images/photo5.png')}}" alt="">
+		{% if cliches is defined %}
+		{% for clichee in cliches %}
+		<div class="brightness-image">
+		<a href="{{path('app_cliches', {id: clichee.id})}}"><img class="h-[250px]" src="{{asset(clichee.image)}}" alt=""></a>
+		</div>
+		{% endfor %}
+		{% else %}
+    <p class="text-white text-xl flex justify-center pt-[3%] pb-[3%]">Pas de clichés ce mois ci.</p>
+	{% endif %}
 		</div>
 		</section>
 	</body>
