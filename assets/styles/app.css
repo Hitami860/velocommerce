@@ -36,3 +36,23 @@
     filter: brightness(1.2); /* Increase brightness by 20% */
 
 }
+
+
+
+
+.progress-container {
+  background-color: gray-800;
+  height: 10px;
+  width: 100%;
+}
+
+.progress-bar {
+  background-color: #54b3d6;
+  height: 10px;
+  width: 0%;
+  position: fixed
+}
+
+.content {
+  padding: 2em;
+}
