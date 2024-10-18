@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bike Life - Favoris{% endblock %}
+
+{% block body %}
+<body class="bg-gray-800 container mx-auto">
+    <div class="text-white font-semibold gap-[3%] text-2xl pb flex justify-center border bg-black pt-7 pb-7">
+
+			<a id="hover" href="{{path('app_main')}}">Accueil</a>
+			<a id="hover" href="{{path('app_produits')}}">Tous nos produits</a>
+			{% if app.user %}
+				{% if "ROLE_Admin" in app.user.roles %}
+					<a id="hover" href="{{path('admin')}}">Admin</a>
+				{% endif %}
+				<a id="hover" href="{{path('app_logout')}}">Deconnexion</a>
+			{% else %}
+				<a id="hover" href="{{path('app_login')}}">Connexion</a>
+			{% endif %}
+			<a id="hover" href="{{path('app_panier')}}">Panier</a>
+			<a id="hover" href="{{path('app_contact')}}">Contact</a>
+
+		</div>
+        <h2 class="text-white text-2xl text-center pt-[3%] font-semibold">Vos favoris</h2>
+</body>
+{% endblock %}
