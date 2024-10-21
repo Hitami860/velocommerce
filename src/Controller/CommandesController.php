@@ -45,6 +45,8 @@ class CommandesController extends AbstractController
         $em->persist($commandeDetails);
         }
         $em->flush();
+
+        $session->remove('panier');
         return $this->render('commandes/commandes.html.twig', [
             'controller_name' => 'CommandesController',
         ]);
