@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<body class="bg-gray-800 container mx-auto">
+<div class="text-white font-semibold gap-[3%] text-2xl pb flex justify-center border bg-black pt-7 pb-7">
+
+			<a id="hover" href="{{path('app_main')}}">Accueil</a>
+			<a id="hover" href="{{path('app_produits')}}">Tous nos produits</a>
+			{% if app.user %}
+				{% if "ROLE_Admin" in app.user.roles %}
+					<a id="hover" href="{{path('admin')}}">Admin</a>
+				{% endif %}
+				<a id="hover" href="{{path('app_logout')}}">Deconnexion</a>
+			{% else %}
+				<a id="hover" href="{{path('app_login')}}">Connexion</a>
+			{% endif %}
+            <a id="hover" href="{{path('app_panier')}}">Panier</a>
+			<a id="hover" href="{{path('app_contact')}}">Contact</a>
+
+		</div>
+    
+<div class="pt-[15%] pb-[4%]">
+<p class="text-red-400 text-4xl  text-center ">Vous avez annulé votre commande !</p>
+<img  class=" pl-[35%] pt-[5%]"src="{{asset('images/gifvelo.gif')}}" alt="">
+</div>
+
+
+</body>
+{% endblock %}
+
+
