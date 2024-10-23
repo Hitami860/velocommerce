@@ -16,7 +16,7 @@
 	<div class="progress-container">
     <div class="progress-bar" id="progressBar"></div>
   </div>
-		<a href="{{path('app_main')}}"><img src="{{asset('images/logobikelife.png')}}" class="h-[150px] w-[200px] absolute ml-[20%] pt-1" alt="Logo bike life"/></a>
+		<a href="{{path('app_main')}}"><img src="{{asset('images/logobikelife.png')}}" class="w-[100px] ml-[5%] md:h-[150px] md:w-[200px] md:ml-[20%] absolute ml-[20%] pt-1" alt="Logo bike life"/></a>
 		<header class="flex flex-col bg-contain bg-no-repeat md:bg-no-repeat bg-cover py-96 container mx-auto gap-[60px] border-2" style="background-image:url('{{asset('images/cyclistes.jpg')}}')">
 
 			<div class="text-white font-semibold gap-[3%] text-2xl pb flex justify-center">
@@ -45,7 +45,7 @@
 		</header>
 		<section class="container mx-auto">
 			<h2 class="text-3xl text-center pt-12 font-semibold text-white">Catégories</h2>
-			<div class="flex flex-wrap gap-3 justify-center pt-7">
+			<div class="w-[380%] pl-[3%] md:w-[100%] md:flex flex-wrap gap-3 justify-center pt-7">
 			{% for category in categorie %}
 			<div class="w-1/4 bg-gray-800 border border-2 border-gray-200 hover:border-[#54b3d6] rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 					<a href="{{path('app_categorie', {id: category.id})}}">
@@ -69,7 +69,7 @@
 		<section>
 			<h2 class="text-3xl text-center pt-12 font-semibold text-white">Actus Bike</h2>
 			<div class="container mx-auto flex flex-wrap gap-4 pt-7 pl-[8%]">
-				<div class="flex flex-col pl-[18%] gap-4">
+				<div class="pr-[20%] flex flex-col pl-[18%] gap-4">
 				{% for actualites in actualite %}
 				<a href="{{path('app_actualite', {id: actualites.id})}}">
 					<img class="h-[300px] border-2 w-full " src="{{asset(actualites.image)}}" alt="actualite">
@@ -87,11 +87,13 @@
 		<h2 class="text-3xl text-center pt-12 font-semibold text-white">Les clichés Bike du mois</h2>
 		<div class="container mx-auto flex gap-4 pt-7">
 		{% if cliches is defined %}
+		<div class="flex flex-col pl-[20%] md:pl-[5%] md:flex-row gap-[1%]">
 		{% for clichee in cliches %}
 		<div class="brightness-image">
-		<a href="{{path('app_cliches', {id: clichee.id})}}"><img class="h-[250px]" src="{{asset(clichee.image)}}" alt=""></a>
+		<a href="{{path('app_cliches', {id: clichee.id})}}"><img class=" pb-[3%] h-[200px] w-[290px] md:h-[250px] md:w-[100%]" src="{{asset(clichee.image)}}" alt=""></a>
 		</div>
 		{% endfor %}
+		</div>
 		{% else %}
     <p class="text-white text-xl flex justify-center pt-[3%] pb-[3%]">Pas de clichés ce mois ci.</p>
 	{% endif %}

@@ -2,8 +2,8 @@
 
 {% block body %}
 
-<body class="bg-gray-800 container mx-auto">
-<div class="text-white font-semibold gap-[3%] text-2xl pb flex justify-center border bg-black pt-7 pb-7">
+	<body class="bg-gray-800 container mx-auto">
+		<div class="text-white font-semibold gap-[3%] text-2xl pb flex justify-center border bg-black pt-7 pb-7">
 
 			<a id="hover" href="{{path('app_main')}}">Accueil</a>
 			<a id="hover" href="{{path('app_produits')}}">Tous nos produits</a>
@@ -15,18 +15,16 @@
 			{% else %}
 				<a id="hover" href="{{path('app_login')}}">Connexion</a>
 			{% endif %}
-            <a id="hover" href="{{path('app_panier')}}">Panier</a>
+			<a id="hover" href="{{path('app_panier')}}">Panier</a>
 			<a id="hover" href="{{path('app_contact')}}">Contact</a>
 
 		</div>
-    
-<div class="pt-[15%] pb-[4%]">
-<p class="text-red-400 text-4xl  text-center ">Vous avez annulé votre commande !</p>
-<img  class=" pl-[35%] pt-[5%]"src="{{asset('images/gifvelo.gif')}}" alt="">
-</div>
+
+		<div class="pt-[15%] pb-[4%]">
+			<p class="text-red-400 text-4xl  text-center ">Vous avez annulé votre commande !</p>
+			<img class=" w-[70%] pt-[5%] pl-[30%] md:w-[70%] md:pl-[30%] md:pt-[5%]" src="{{asset('images/gifvelo.gif')}}" alt="">
+		</div>
 
 
-</body>
+	</body>
 {% endblock %}
-
-
