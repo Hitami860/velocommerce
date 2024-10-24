@@ -5,7 +5,7 @@
 
 {% block body %}
 	<body class="bg-gray-800 container mx-auto">
-		<div class="text-white font-semibold gap-[3%] text-2xl pb flex justify-center border bg-black pt-7 pb-7">
+		<div class="text-white font-semibold flex flex-wrap gap-[3%] text-2xl sm:text-xl py-7 pb flex justify-center border bg-black pt-7 pb-7">
 
 			<a id="hover" href="{{path('app_main')}}">Accueil</a>
 			<a id="hover" href="{{path('app_produits')}}">Tous nos produits</a>
@@ -13,6 +13,7 @@
 				{% if "ROLE_Admin" in app.user.roles %}
 					<a id="hover" href="{{path('admin')}}">Admin</a>
 				{% endif %}
+				<a id="hover" href="{{path('app_profil')}}">Profil</a>
 				<a id="hover" href="{{path('app_logout')}}">Deconnexion</a>
 			{% else %}
 				<a id="hover" href="{{path('app_login')}}">Connexion</a>
@@ -23,12 +24,15 @@
 		</div>
 		<div class="pt-[5%]">
 			<div><img class="w-[450px] pl-[2%] md:w-full md:h-[800px]" src="{{asset(cliche.image)}}" alt=""/></div>
-            <div class="pt-[3%]">
-            <p class="text-white text-xl "><span class="font-bold">Photographe:</span> {{cliche.auteur}}</p>
-            <p class="text-white text-xl"><span class="font-bold">Description:</span> </p>
-            </div>
+			<div class="pt-[3%] pl-[1%]">
+				<p class="text-white text-xl ">
+					<span class="font-bold">Photographe:</span>
+					{{cliche.auteur}}</p>
+				<p class="text-white text-xl">
+					<span class="font-bold">Description:</span>
+				</p>
+			</div>
 		</div>
-
 
 
 	</body>

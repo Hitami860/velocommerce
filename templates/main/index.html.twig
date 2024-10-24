@@ -4,18 +4,19 @@
 {% endblock %}
 
 {% block body %}
-	<body class="bg-gray-800">
-	{# <section class="pb-[30%] w-[100%] bg-no-repeat bg-contain container mx-auto" style="background-image:url('{{asset('images/bklback.jpeg')}}')">
-	<div class="pt-[30%]">
-	<div class="border border-solid border-2 bg-gray-600 opacity-[70%] w-[60%] py-4 ml-[18%]">
-	<h2 class="text-white text-5xl text-center font-semibold">Bike Life</h2>
-	</div>
-	<p class="text-white text-xl font-semibold text-center pt-[5%] pr-[3%]">Let's go !</p>
-	</div>
-	</section> #}
-	<div class="progress-container">
-    <div class="progress-bar" id="progressBar"></div>
-  </div>
+	<body
+		class="bg-gray-800">
+		{# <section class="pb-[30%] w-[100%] bg-no-repeat bg-contain container mx-auto" style="background-image:url('{{asset('images/bklback.jpeg')}}')">
+			<div class="pt-[30%]">
+			<div class="border border-solid border-2 bg-gray-600 opacity-[70%] w-[60%] py-4 ml-[18%]">
+			<h2 class="text-white text-5xl text-center font-semibold">Bike Life</h2>
+			</div>
+			<p class="text-white text-xl font-semibold text-center pt-[5%] pr-[3%]">Let's go !</p>
+			</div>
+			</section> #}
+		<div class="progress-container">
+			<div class="progress-bar" id="progressBar"></div>
+		</div>
 		<a href="{{path('app_main')}}"><img src="{{asset('images/logobikelife.png')}}" class="w-[100px] ml-[5%] md:h-[150px] md:w-[200px] md:ml-[20%] absolute ml-[20%] pt-1" alt="Logo bike life"/></a>
 		<header class="flex flex-col bg-contain bg-no-repeat md:bg-no-repeat bg-cover py-96 container mx-auto gap-[60px] border-2" style="background-image:url('{{asset('images/cyclistes.jpg')}}')">
 
@@ -24,13 +25,13 @@
 				<a id="hover" href="{{path('app_main')}}">Accueil</a>
 				<a id="hover" href="{{path('app_produits')}}">Tous nos produits</a>
 				{% if app.user %}
-				{% if "ROLE_Admin" in app.user.roles %}
-				<a id="hover" href="{{path('admin')}}" >Admin</a>
-				{% endif %}
-				<a id="hover" href="{{path('app_profil')}}">Profil</a>
-				<a id="hover" href="{{path('app_logout')}}">Deconnexion</a>
+					{% if "ROLE_Admin" in app.user.roles %}
+						<a id="hover" href="{{path('admin')}}">Admin</a>
+					{% endif %}
+					<a id="hover" href="{{path('app_profil')}}">Profil</a>
+					<a id="hover" href="{{path('app_logout')}}">Deconnexion</a>
 				{% else %}
-				<a id="hover" href="{{path('app_login')}}">Connexion</a>
+					<a id="hover" href="{{path('app_login')}}">Connexion</a>
 				{% endif %}
 				<a id="hover" href="{{path('app_panier')}}">Panier</a>
 				<a id="hover" href="{{path('app_contact')}}">Contact</a>
@@ -46,58 +47,58 @@
 		<section class="container mx-auto">
 			<h2 class="text-3xl text-center pt-12 font-semibold text-white">Catégories</h2>
 			<div class="w-[380%] pl-[3%] md:w-[100%] md:flex flex-wrap gap-3 justify-center pt-7">
-			{% for category in categorie %}
-			<div class="w-1/4 bg-gray-800 border border-2 border-gray-200 hover:border-[#54b3d6] rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-					<a href="{{path('app_categorie', {id: category.id})}}">
-						<div class="zoom-image"><img class="w-full h-[200px]" src="{{asset(category.image)}}" alt=""/></div>
-					</a>
-					<div class="p-5">
-						<a href="#">
-							<h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white uppercase">{{category.nom}}</h5>
+				{% for category in categorie %}
+					<div class="w-1/4 bg-gray-800 border border-2 border-gray-200 hover:border-[#54b3d6] rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+						<a href="{{path('app_categorie', {id: category.id})}}">
+							<div class="zoom-image"><img class="w-full h-[200px]" src="{{asset(category.image)}}" alt=""/></div>
 						</a>
-						<a href="{{path('app_categorie', {id: category.id})}}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#54b3d6] rounded-lg hover:bg-[#0B9C9F] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-							Découvrir
-							<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 14 10">
-								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-							</svg>
-						</a>
+						<div class="p-5">
+							<a href="#">
+								<h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white uppercase">{{category.nom}}</h5>
+							</a>
+							<a href="{{path('app_categorie', {id: category.id})}}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#54b3d6] rounded-lg hover:bg-[#0B9C9F] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+								Découvrir
+								<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 14 10">
+									<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+								</svg>
+							</a>
+						</div>
 					</div>
-				</div>
-			{% endfor %}
+				{% endfor %}
 			</div>
 		</section>
 		<section>
 			<h2 class="text-3xl text-center pt-12 font-semibold text-white">Actus Bike</h2>
 			<div class="container mx-auto flex flex-wrap gap-4 pt-7 pl-[8%]">
 				<div class="pr-[20%] flex flex-col pl-[18%] gap-4">
-				{% for actualites in actualite %}
-				<a href="{{path('app_actualite', {id: actualites.id})}}">
-					<img class="h-[300px] border-2 w-full " src="{{asset(actualites.image)}}" alt="actualite">
-					<p class="text-white">
-					</a>
+					{% for actualites in actualite %}
+						<a href="{{path('app_actualite', {id: actualites.id})}}">
+							<img class="h-[300px] border-2 w-full " src="{{asset(actualites.image)}}" alt="actualite">
+							<p class="text-white"></p>
+						</a>
 						<span class="font-bold text-2xl">{{actualites.titre}}</span>
 						{# : Dès 2025, les coureurs espoirs<br>évoluant en World Tour ou ProTeam ne pourront plus<br>disputer les championnats du monde dans la catégorie U23. #}
 					</p>
 				{% endfor %}
-				</div>
-				
+			</div>
+
 		</section>
 		<section>
-		
-		<h2 class="text-3xl text-center pt-12 font-semibold text-white">Les clichés Bike du mois</h2>
-		<div class="container mx-auto flex gap-4 pt-7">
-		{% if cliches is defined %}
-		<div class="flex flex-col pl-[20%] md:pl-[5%] md:flex-row gap-[1%]">
-		{% for clichee in cliches %}
-		<div class="brightness-image">
-		<a href="{{path('app_cliches', {id: clichee.id})}}"><img class=" pb-[3%] h-[200px] w-[290px] md:h-[250px] md:w-[100%]" src="{{asset(clichee.image)}}" alt=""></a>
-		</div>
-		{% endfor %}
-		</div>
-		{% else %}
-    <p class="text-white text-xl flex justify-center pt-[3%] pb-[3%]">Pas de clichés ce mois ci.</p>
-	{% endif %}
-		</div>
+
+			<h2 class="text-3xl text-center pt-12 font-semibold text-white">Les clichés Bike du mois</h2>
+			<div class="container mx-auto flex gap-4 pt-7">
+				{% if cliches is defined %}
+					<div class="flex flex-col pl-[20%] md:pl-[5%] md:flex-row gap-[1%]">
+						{% for clichee in cliches %}
+							<div class="brightness-image">
+								<a href="{{path('app_cliches', {id: clichee.id})}}"><img class=" pb-[3%] h-[200px] w-[290px] md:h-[250px] md:w-[100%]" src="{{asset(clichee.image)}}" alt=""></a>
+							</div>
+						{% endfor %}
+					</div>
+				{% else %}
+					<p class="text-white text-xl flex justify-center pt-[3%] pb-[3%]">Pas de clichés ce mois ci.</p>
+				{% endif %}
+			</div>
 		</section>
 	</body>
 	<script src="./scrollprogress.js"></script>

@@ -6,10 +6,11 @@
 
 {% block body %}
 	<body class="bg-gray-800 container mx-auto">
-	<div class="progress-container">
-    <div class="progress-bar" id="progressBar"></div>
-  </div>
-		<div class="text-white font-semibold gap-[3%] text-2xl pb flex justify-center border bg-black pt-7 pb-7">
+		<div class="progress-container">
+			<div class="progress-bar" id="progressBar"></div>
+		</div>
+
+		<div class="text-white font-semibold flex flex-wrap gap-[3%] text-2xl sm:text-xl py-7 pb flex justify-center border bg-black pt-7 pb-7">
 
 			<a id="hover" href="{{path('app_main')}}">Accueil</a>
 			<a id="hover" href="{{path('app_produits')}}">Tous nos produits</a>
@@ -26,14 +27,15 @@
 			<a id="hover" href="{{path('app_contact')}}">Contact</a>
 
 		</div>
+
 		<div class="text-white text-5xl text-center pb-[5%] pt-[3%] font-bold">
 			{{actualites.titre}}
 		</div>
-        <div class="">
-		<div style="background-image:url('{{asset(actualites.image)}}')" class="pt-[30%] flex justify-center bg-contain bg-no-repeat ml-[20%]">
-			{# <img class="h-96" src="{{asset(actualites.image)}}" alt=""> #}
+		<div class="">
+			<div
+				style="background-image:url('{{asset(actualites.image)}}')" class="pt-[30%] flex justify-center bg-contain bg-no-repeat ml-[20%]">{# <img class="h-96" src="{{asset(actualites.image)}}" alt=""> #}
+			</div>
 		</div>
-        </div>
 		<div class="text-white text-xl pt-[5%]">
 			{{actualites.description}}
 		</div>
